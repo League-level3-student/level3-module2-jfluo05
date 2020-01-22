@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
  * BubbleSorter	   (ip)
  * SelectionSorter (done)
  * InsertionSorter (done)
- * QuickSorter
- * MergeSorter
- * HeapSorter
+ * QuickSorter	   (done)
+ * MergeSorter	   (done)
+ * HeapSorter	   (done)
  * BogoSorter
  */
 
