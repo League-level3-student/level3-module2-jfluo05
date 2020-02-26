@@ -1,5 +1,6 @@
 package _02_More_Algorithms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Algorithms {
@@ -65,22 +66,26 @@ public class Algorithms {
 	}
 
 	public static Object sortDNA(List<String> unsortedSequences) {
-		// TODO Auto-generated method stub
-		List<String> sortedSequences;
-		for (int i = 0; i < unsortedSequences.size(); i++) {
-		
-		for (int k = 0; k < unsortedSequences.size(); k++) {
-				
-		                if (unsortedSequences.get(k).length() > unsortedSequences.get(k+1).length()) { 
-		                	
-		 	              String temp=unsortedSequences.get(k);
-		 	             unsortedSequences.remove(k);
-		 	            unsortedSequences.toArray();
-		 	            
-		 	                } 
-		                }
+		ArrayList<String> sorted = new ArrayList<String>();
+		String smallest = "shrfasjidhfojahsgdkfhgakjsdhfgjkashgdfjkash";
+		int smallestIndex = 0;
+		while(unsortedSequences.size()>0) {
+			for (int i = 0; i < unsortedSequences.size(); i++) {
+			if (unsortedSequences.get(i).length() < smallest.length()) {
+				smallest = unsortedSequences.get(i);
+				smallestIndex=i;
+			}
 		}
-		return sortedSequences;
+		sorted.add(smallest);
+
+		unsortedSequences.remove(smallestIndex);
+		}
+		return sorted;
 	}
-}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		
+		return null;
+	}
 }
