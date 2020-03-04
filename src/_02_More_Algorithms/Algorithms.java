@@ -66,26 +66,29 @@ public class Algorithms {
 	}
 
 	public static Object sortDNA(List<String> unsortedSequences) {
-		ArrayList<String> sorted = new ArrayList<String>();
-		String smallest = "shrfasjidhfojahsgdkfhgakjsdhfgjkashgdfjkash";
-		int smallestIndex = 0;
-		while(unsortedSequences.size()>0) {
-			for (int i = 0; i < unsortedSequences.size(); i++) {
-			if (unsortedSequences.get(i).length() < smallest.length()) {
-				smallest = unsortedSequences.get(i);
-				smallestIndex=i;
+		for (int i = 0; i <unsortedSequences.size(); i++) {
+			for (int j = 0; j < unsortedSequences.size()-1; j++) {
+				if(unsortedSequences.get(j).length()>unsortedSequences.get(j+1).length()) {
+					String temp = unsortedSequences.get(j); 
+					unsortedSequences.set(j, unsortedSequences.get(j+1)); 
+					unsortedSequences.set(j+1,temp); 
+				}
 			}
 		}
-		sorted.add(smallest);
-
-		unsortedSequences.remove(smallestIndex);
-		}
-		return sorted;
+		return unsortedSequences;
 	}
 
 	public static List<String> sortWords(List<String> words) {
 		// TODO Auto-generated method stub
-		
-		return null;
+		for (int i = 0; i < words.size(); i++) {
+			for (int k = 0; k < words.size()-1; k++) {
+				if(words.get(k).compareTo(words.get(k+1))>0) {
+					String temp = words.get(k); 
+					words.set(k, words.get(k+1)); 
+					words.set(k+1,temp); 
+				}
+			}
+		}
+		return words;
 	}
 }
